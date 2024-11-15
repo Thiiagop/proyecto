@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 50px 50px 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    position: relative;
+    height: 70px;
+    box-shadow: 0px 5px 10px #00AF00;
+    border-radius: 0 0 30px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    overflow: hidden;
+}
+
+.logo-link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.logo-image {
+    max-height: 100%;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-weight: 800;
+    color: #000000;
+    margin-left: 15px;
+}
+
+.logo-text h1,
+.logo-text h2 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+header ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+header ul li {
+    list-style-type: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+
+#menuList > li > a {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+#menuList > li > a:hover {
+    color: #00AF00;
+}
+
+.submenu li a {
+    color: #00AF00;
+}
+
+.submenu li a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.dropdown_toggle i {
+    margin-left: 8px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    color: #ffffff;
+    background-color: #00AF00;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+    box-shadow: 2px 2px 4px #929292;
+}
+
+.button:hover {
+    background-color: #028f02;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: #ffffff;
+    padding: 10px 0;
+    width: 200px;
+    box-shadow: 0px 5px 10px #00AF00;
+}
+
+.submenu.open {
+    display: block;
+}
+
+.dropdown.open .dropdown_toggle i {
+    transform: rotate(180deg);
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i {
+    color: #fff;
+    font-size: 30px;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+    
+
+.carousel-inner .carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+        object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+#carruselPrueba {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+.carousel-item.active img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.carousel-item img {
+    transform: scale(0.95);
+    opacity: 0.6;
+}
+
+.card {
+    width: 18rem;
+    margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+    header ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #ffffff;
+        gap: 0;
+        overflow-y: auto;
+        transition: max-height 0.5s ease;
+    }
+
+    header ul li {
+        padding: 20px;
+        padding-top: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+        background-color: #ffffff;
+    }
+
+    .submenu li a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .submenu li a:hover {
+        background-color: #3CC56A;
+        color: #fff;
+    }
+}
+
+@media (min-width: 701px) {
+    header ul {
+        position: relative;
+        flex-direction: row;
+        background: transparent;
+        max-height: none;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+
+
+/* Css historiales */
+
+.historial-row {
+    display: flex; /* Activa el modo flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espacio entre los textos */
+}
+
+.historial, .activo {
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    margin: 0; /* Elimina márgenes */
+    cursor: pointer; /* Indica que puede ser clickeado */
+}
+
+.seleccionado {
+    border-bottom: 3px solid #00AF00; /* Línea inferior indicando selección */
+    padding-bottom: 5px; /* Espacio entre el texto y la línea */
+    color: #00AF00; /* Color destacado para el texto */
+}
+
+.sin-subrayado {
+    text-decoration: none; /* Elimina el subrayado en el enlace */
+}
+
+.activo {
+    color: #000000; /* Color normal para el texto no seleccionado */
+    opacity: 0.7; /* Texto no seleccionado menos llamativo */
+}
+
+/* header */
+
+.hover-contact {
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Hacer que el div se vea como un enlace */
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.hover-contact:hover {
+    color: #00AF00;
+}
+
+.contact-info {
+    max-height: 0;  /* Comienza con altura 0 */
+    overflow: hidden;  /* Oculta el contenido desbordante */
+    transition: max-height 0.5s ease-out;  /* Transición suave */
+}
+
+/* Cuando se añade la clase 'open', el contenedor se expande */
+.contact-info.open {
+    max-height: 1000px;  /* Ajusta según el contenido (un valor grande) */
+}
+
+/* footer */
+
+.container-footer {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-area {
+    background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-column {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-column h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #0dc459;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-column ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-column .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0, 255, 76, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-column .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* Responsive */
+@media(max-width: 767px) {
+    .footer-column {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-column {
+        width: 100%;
+    }
+}
+/* filtro */
+.body {
+    font-family: Poppins;
+}
+
+.container-filtro {
+    display: flex;
+    justify-content: space-between; /* Mantener separación entre los elementos */
+    align-items: center; /* Centrar verticalmente */
+    background-color: #f0f0f0;
+    padding: 0 20px; /* Añadir un pequeño padding a la izquierda y derecha */
+    border-bottom: 2px solid #00ff00;
+    height: 50px;
+    width: 70%; /* Define el ancho del contenedor */
+    box-sizing: border-box; /* Asegura que el padding se sume al tamaño total */
+    margin: 0 auto; /* Centra el contenedor en el medio de la página */
+}
+
+  
+  .filter {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 10px;
+  }

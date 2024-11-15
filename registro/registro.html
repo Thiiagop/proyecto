@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="registro.css" />
+    <title>Bienvenido</title>
+    <!-- Importar SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="parent">
+        <div class="image">
+          <img src="../images/Foto1.jpeg" alt="Imagen descriptiva">
+        </div>
+        <div class="form">
+          <form class="registration-form" id="registrationForm" onsubmit="return false;"> <!-- Evitar el envío del formulario -->
+            <div class="escudo"><img src="../images/senaEscudo.png" alt="Imagen descriptiva"></div>
+            <h2>Bienvenido al Portal de Gestión de Recursos</h2>
+            
+            <div class="form__group1 field">
+              <input type="text" class="form__field1" name="nombres" placeholder="Nombres" required>
+              <label for="nombres" class="form__label1">Nombres</label>
+            </div>
+            <div class="form__group2 field">
+              <input type="text" class="form__field2" name="apellidos" placeholder="Rodríguez" required>
+              <label for="apellidos" class="form__label2">Apellidos</label>
+            </div>
+            
+            <!-- Selector Personalizado en HTML -->
+            <label class="select" for="slct">
+              <select id="slct" name="cargo" required>
+                  <option value="" disabled selected>Selecciona tu cargo</option>
+                  <option value="administrador">Administrador</option>
+                  <option value="instructor">Instructor</option>
+              </select>
+              <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+              </svg>
+            </label>
+
+            <!-- SVG Sprites -->
+            <svg class="sprites">
+              <symbol id="select-arrow-down" viewBox="0 0 10 6">
+                  <polyline points="1 1 5 5 9 1"></polyline>
+              </symbol>
+            </svg>
+            
+            <div class="form__group3 field">
+              <input type="email" class="form__field3" name="email" placeholder="example@gmail.com" required>
+              <label for="email" class="form__label3">Email:</label>
+            </div>
+            
+            <div class="form__group4 field">
+              <input type="password" class="form__field4" name="contraseña" placeholder="Password" required>
+              <label for="contraseña" class="form__label4">Contraseña:</label>
+            </div>        
+            
+            <div class="terms">
+              <input type="checkbox" id="terminos" name="terminos" required>
+              <label for="terminos">Acepto los <a href="/Actualizacion 14nov/termsconditions/termscon.html">términos y condiciones</a></label>
+            </div>
+            
+            <button class="create" onclick="mostrarAlerta()">Crea tu cuenta</button>
+            
+            <p>¿Ya tienes una cuenta? <a href="../index.html">Iniciar sesión</a></p>
+          </form>
+        </div>
+      </div>
+
+    <script>
+        function mostrarAlerta() {
+            // Obtener el formulario
+            const form = document.getElementById('registrationForm');
+            
+            // Verificar si todos los campos requeridos están llenos
+            if (form.checkValidity()) {
+                // Mostrar la alerta de éxito si el formulario es válido
+                Swal.fire({
+                    title: 'Registro exitoso',
+                    text: 'Tu cuenta ha sido creada con éxito.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirigir a la página de inicio si se confirma
+                        window.location.href = "../index.html";
+                    }
+                });
+            } else {
+                // Mostrar la alerta de error si el formulario no es válido
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Necesitas rellenar el formulario para que el registro sea exitoso.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        }
+    </script>
+</body>
+</html

@@ -1,0 +1,333 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  /* Estilos Globales */
+  * {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1{
+    text-align: center; 
+    font-size: 1.25rem; /* Tamaño relativo al tamaño base */
+    padding-top: 1rem; /* Tamaño relativo al tamaño base */
+    font-weight: 500;
+  }
+
+  .parent {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(1,45,5,1) 0%, rgba(0,175,0,1) 44%, rgba(0,201,101,1) 64%, rgba(0,255,128,1) 100%);; /* Ocupa toda la altura de la ventana */ 
+  }
+
+  .image {
+    flex: 1; /* Ocupa la mitad izquierda de la pantalla */
+    display: flex;
+    width: 60%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .image img {
+    width: 100%;
+    height: 130%;
+  }
+
+  .form {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; /* Centra el formulario verticalmente */
+    background-color: #ffffff;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    z-index: 1;
+}
+
+.form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(275deg, rgba(0, 201, 100, 0.708), rgba(255, 255, 255, 0.968));
+    z-index: -1; /* Pone la sombra detrás del formulario */
+    filter: blur(30px); /* Aplica desenfoque para que se vea como una sombra */
+    opacity: 0.5; /* Ajusta la opacidad para dar un efecto de sombra */
+}
+
+
+  .registration-form {
+    display: flex; /* Flex para colocar los divs hijos en línea */
+    flex-wrap: wrap;
+    height: 70%;
+    max-width: 500px;
+    text-align: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10%;
+    width: 90%; /* Ocupa todo el ancho del contenedor disponible */
+    background-color: #ffffff;  
+    border-radius: 10%;
+    filter: drop-shadow( 8px 9px 20px #02de692b);
+  }
+
+/* navbar */
+
+.escudo {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;      /* Centra verticalmente */
+  width: 100%;
+  margin-top: -30px;        /* Mueve la imagen hacia arriba con un margen negativo */
+  margin-bottom: 20px;      /* Añadir algo de margen inferior para separar del título */
+}
+
+.escudo img {
+  max-width: 100px;
+  height: auto;
+}
+
+
+.registration-form h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Grupos de Formulario */
+.form__group1, .form__group2, .form__group3, .form__group4 {
+  position: relative;
+  padding: 15px 0 0;
+  width: 48%; /* Ajusta para que ambos divs ocupen la mitad del espacio, con algo de margen */
+  margin-bottom: 0px;
+}
+
+/* Campos de Formulario */
+.form__field1, .form__field2, .form__field3, .form__field4 {
+  font-family: inherit;
+  width: 100%;
+  font-weight: 500;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #000000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+
+  &::selection {
+    background: #03d573cb;
+  }
+}
+
+/* Etiquetas */
+.form__label1, .form__label2, .form__label3, .form__label4 {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  pointer-events: none;
+  font-weight: 600;
+  color: #9b9b9b;
+}
+
+/* Campo en Enfoque */
+.form__field1:focus ~ .form__label1, .form__field2:focus ~ .form__label2, .form__field3:focus ~ .form__label3, .form__field4:focus ~ .form__label4 {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+.form__field1:focus, .form__field2:focus, .form__field3:focus, .form__field4:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+.form__field1:required, .form__field1:invalid, .form__field2:required, .form__field2:invalid, .form__field3:required, .form__field4:invalid {
+  box-shadow: none;
+}
+
+.select {
+  position: relative;
+  width: 1000px;
+}
+
+.select svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: #9098A9;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.select select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  border: 1px solid #E8EAED;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 3px 1px #00af007e;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+}
+
+.select select:required:invalid {
+  color: #5A667F;
+}
+
+.select select option {
+  color: #223254;
+}
+
+.select select option[value=""][disabled] {
+  display: none;
+}
+
+.select select:focus {
+  outline: none;
+  color: #00AF00;
+  border-color: #00AF00;
+  box-shadow: 0 0 0 2px rgba(0, 255, 238, 0.2);
+}
+
+.select select:hover + svg {
+  stroke: #00AF00;
+}
+
+.sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Contenedor del checkbox y el texto */
+.registration-form .terms {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el contenido */
+  gap: 10px;           /* Espacio entre el checkbox y el texto, para más control */
+}
+
+/* Estilos para el checkbox */
+.registration-form .terms input[type="checkbox"] {
+  margin: 0;            /* Eliminar margen adicional */
+  width: 20px;          /* Ajustar el ancho del checkbox */
+  height: 20px;         /* Ajustar la altura del checkbox */
+  cursor: pointer;      /* Cambia el cursor al pasar sobre el checkbox */
+}
+
+/* Estilos para el texto */
+.registration-form .terms label {
+  font-size: 14px;
+  line-height: 1.5;     /* Alinea el texto con el checkbox */
+  margin-left: 0;       /* Eliminar margen adicional */
+}
+
+.registration-form .terms a {
+  color:  #00AF00;
+  text-decoration: none;
+}
+
+
+  
+  
+
+.create {
+  margin: 5px auto 0px auto; /* Espacio adicional entre el botón y los elementos de arriba y abajo */
+  display: block;              /* Asegura que el botón ocupe toda la fila para ser centrado con margin */
+  font-size: 16px;
+  background-color: #00AF00;
+  padding: 15px 80px;          /* Ajuste del tamaño para un look más consistente */
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.24s, box-shadow 0.24s;
+}
+
+.create a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;       /* Asegura que el enlace se comporte como un botón */
+  width: 100%;                 /* Hace que el enlace ocupe todo el espacio del botón */
+}
+
+  
+.create:hover {
+  background-color: #287a43;
+  transition: 0.24s;
+  color: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.registration-form p {
+  margin: -5px auto 0; /* Centra el párrafo horizontalmente y añade margen superior para separación */
+  text-align: center;  /* Centra el texto dentro del párrafo */
+  width: 100%;         /* Asegura que ocupe todo el ancho disponible en el contenedor */
+  font-size: 14px;
+}
+
+.registration-form p a {
+  color: #00AF00;
+  text-decoration: none;
+}
+
+.registration-form p a:hover {
+  text-decoration: underline;
+}
+
+
+  
+
+
+  @media (max-width: 780px) {
+    .image {
+      display: none;
+    }
+
+    .form {
+      width: 100%; /* Ocupa el 100% del ancho disponible */
+      display: flex; /* Utiliza Flexbox para centrar */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      padding: 20px; /* Agrega un poco de espacio interno */
+      box-sizing: border-box; /* Incluye el padding en el ancho total */
+    }
+
+    .registration-form {
+      width: 100%; /* Ajusta el formulario al ancho disponible */
+      max-width: 500px; /* Limita el ancho máximo del formulario si es necesario */
+    }
+
+  }

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-dark: #ffffff;
+  --color-dark-x: #ffffff;
+  --color-dark-xx: #ececec;
+  --color-light: #000000;
+  --color-grey: #000000;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  background-color: var(--color-grey);
+  color: var(--color-light);
+  letter-spacing: 0.05rem;
+  min-height: 150vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pseudo-elemento para la imagen de fondo */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/imageRegister.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Ajusta el valor según el nivel de desenfoque deseado */
+  z-index: -1; /* Asegura que la imagen esté detrás del contenido */
+}
+
+
+.bg-light {
+  background-color: var(--color-light) !important;
+}
+
+.bg-dark {
+  background-color: var(--color-dark) !important;
+}
+
+.p-6 {
+  padding: 4rem 7rem;
+}
+
+.contact-box {
+  padding: 3rem;
+}
+
+.btn {
+  font-weight: 400;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  min-width: 10rem;
+}
+
+.btn-outline-dark {
+  border: 2px solid var(--color-dark-xx);
+}
+
+.form-control {
+  /* background-color: var(--color-dark-xx);
+  border: 2px solid var(--color-dark-xx);
+  border-radius: 0.2rem;
+  padding: 1.5rem 1rem; */
+  color: #000000;
+   /* Asegúrate de que el texto sea visible */
+}
+
+select.form-control {
+  background-color: var(--color-dark-xx);
+  border: 2px solid var(--color-dark-xx);
+  border-radius: 0.2rem;
+  padding: 1.5rem 1rem;
+  color: #000000; /* Asegúrate de que el texto sea visible */
+}
+
+/* Estilo para el placeholder */
+select.form-control option:first-child {
+  color: var(--color-light); /* Color del texto del placeholder */
+}
+
+.register-bg {
+  background-image: url('../images/image5.png');
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 150vh;
+}
+
+.testiomonial {
+  bottom: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .p-6 {
+    padding: 2rem;
+  }
+
+  .contact-box {
+    padding: 0;
+  }
+
+  .width-100 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .register-bg {
+    min-height: 50vh;
+  }
+}

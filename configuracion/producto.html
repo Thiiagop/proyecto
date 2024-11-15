@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Préstamos</title>
+        <link rel="stylesheet" href="../styles/producto.css">
+        <link rel="stylesheet" href="../styles/menu.css">
+    </head>
+    <body>
+        
+            <!-- Contenedor para el encabezado -->
+    <div id="header-container"></div>
+
+    <!-- Bienvenida -->
+    <div class="container text-center">
+        <h2>Gestor de Recursos</h2>
+    </div>
+
+        <div class="contenedor">
+            <img src="../images/CableHDMI.png" alt="Imagen" class="imagen">
+            <div class="contenido">
+                <div class="texto">
+                    <h4>Cable HDMI</h4>
+                    <p>Un cable HDMI (High-Definition Multimedia Interface) es un cable utilizado para <br>
+                        transmitir señales de audio y video de alta calidad entre dispositivos, como <br>
+                        televisores, computadoras, consolas de videojuegos y reproductores de medios. <br> 
+                        Ofrece una conexión digital y soporta resoluciones de hasta 4K y audio multicanal.</p>
+                </div>
+
+                <div class="acciones">
+                    <button onclick="updateCount(-1)">-</button>
+                    <input id="quantity" type="number" value="0" min="0" readonly>
+                    <button onclick="updateCount(1)">+</button>
+                    <button class="add-to-loan">Agregar al préstamo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="imagenes-container">
+            <div class="imagen-item">
+                <img src="../images/Portatil.png" alt="Imagen 1">
+            </div>
+            <div class="imagen-item">
+                <img src="../images/soldador-inversor.jpg" alt="Imagen 2">
+            </div>
+            <div class="imagen-item">
+                <img src="../images/tablero.png" alt="Imagen 3">
+            </div>
+            <div class="imagen-item">
+                <img src="../images/Teclado.png" alt="Imagen 4">
+            </div>
+        </div>
+
+        <script src="../scripts/producto.js"></script>
+            <!-- Cargar header.html con JavaScript -->
+    <script>
+        fetch('../header/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data)
+            .catch(error => console.error('Error al cargar el header:', error));
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<script src="header.js" defer></script>
+<header>
+    <a href="../Menu/menu.html" class="logo-link">
+        <div class="logo">
+            <img src="../images/senaEscudo.png" alt="Logo" class="logo-image">
+            <div class="logo-text">
+                <h1>Portal de<br> Gestión de Recursos</h1>
+            </div>
+        </div>
+    </a>
+    
+    <ul id="menuList">
+        <li><a href="../Menu/menu.html">Inicio</a></li>
+        
+        <!-- Nueva categoría añadida -->
+        <li class="dropdown">
+            <a href="#" class="dropdown_toggle">
+                Categoría
+                <i class="arrow"></i> <!-- Icono de flecha que rota -->
+            </a>
+            <ul class="submenu">
+                <li><a href="#">Subcategoría 1</a></li>
+                <li><a href="#">Subcategoría 2</a></li>
+                <li><a href="#">Subcategoría 3</a></li>
+            </ul>
+        </li>
+    
+        <li><div onclick="scrollToFooter()" class="hover-contact">Contactanos</div></li>
+        <li><a href="../configuracion/configuracion.html">Perfil</a></li>
+        <li><a href="#">Ayuda</a></li>
+    </ul>
+    
+    <div class="button-container">
+        <a href="../Carrito de prestamos/Carrito_prestamo.html" class="button">Préstamos</a> 
+        <a href="../index.html"><img src="../images/cerrar-sesion.png" height="50px" width="50px" alt="Cerrar Sesion"></a>
+    </div>
+    
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
+</header>

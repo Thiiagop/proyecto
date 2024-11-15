@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilos Globales */
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Contenedor Principal */
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  background-color: #F1F3F6;
+  background-image: radial-gradient(circle at 0% 0%, hsla(121.76, 100%, 75%, 0.35) 3.12%, transparent 40%),
+                    radial-gradient(circle at 20% 0%, hsla(123.09, 100%, 81%, 0.17) 3.12%, transparent 40%),
+                    radial-gradient(circle at 40% 0%, hsla(108.53, 100%, 89%, 0.35) 3.12%, transparent 40%),
+                    radial-gradient(circle at 60% 0%, hsla(122.84, 57%, 69%, 0.16) 3.12%, transparent 40%),
+                    radial-gradient(circle at 80% 0%, hsla(131.03, 100%, 50%, 0.14) 3.12%, transparent 40%),
+                    radial-gradient(circle at 100% 0%, hsla(119.12, 94%, 83%, 0.35) 3%, transparent 40%);
+}
+
+/* Imagen Lado */
+.imagen-lado {
+  grid-column: 2;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  align-self: flex-start; /* o flex-end para colocarla en la parte inferior */
+}
+
+/* Navbar Vertical */
+.navbar-vertical {
+  width: 500px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border: #00d447;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Títulos */
+.titulo-principal {
+  font-size: 24px; /* Ajusta el tamaño según sea necesario */
+  font-weight: 600;
+  padding-bottom: 70px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+
+/* Etiquetas */
+label {
+  font-size: 16px;
+  color: #555555;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  padding: 0 10px; /* Padding en los lados izquierdo y derecho */
+}
+
+/* Margen entre input de correo y label de contraseña */
+.col-sm-12 + .col-sm-12 {
+  margin-top: 20px; /* Ajusta el valor según sea necesario */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"], 
+input[type="password"] {
+  font-size: 0.9em;
+  background-color: #c0c0c086; /* Color sólido para el fondo */
+  color: #000000; /* Color del texto sin opacidad */
+  width: 87%;
+  height: 40px;
+  margin-bottom: 5px;
+  padding: 4px;
+  border: none;
+  outline-color: #32323256;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  text-indent: 10px;
+}
+
+input[type="text"]::before,
+input[type="password"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 192, 192, 0.5);
+  z-index: -1;
+  border-radius: 5px;
+}
+
+/* Estilos para el placeholder */
+::placeholder {
+  color: #000000; /* Color del placeholder en modo normal */
+  opacity: 90%;
+}
+
+.inicio {
+  font-size: 1.2em;
+  width: 100%;
+  height: 50px;
+  background-color: #00AF00; /* Verde más oscuro */
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 55px;
+  margin-bottom: 25px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  text-align: center; /* Agregué esta propiedad */
+}
+
+.inicio:hover {
+  background-color: #287a43;
+  color: #ffffff;
+  transition: 0.24s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.registro {
+  text-decoration: none;
+  font-size: 1.2em;
+  width: 100%;
+  height: 50px;
+  background-color: #ffffff; /* Gris más oscuro */
+  color: #00AF00; /* Verde más oscuro */
+  padding: 10px;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  border-color: #00AF00;
+  border-style: solid; /* Agregué esta propiedad */
+  border-width: 1px; /* Opcional, pero recomendado para establecer el ancho del borde */
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center; /* Agregué esta propiedad */
+}
+
+.registro:hover {
+  text-decoration: none;
+  background-color: #e0e0e0; /* Gris más oscuro */
+  border-color: #00d447; /* Verde más brillante */
+  color: #004d00; /* Verde aún más oscuro para mayor contraste */
+  transition: 0.24s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Modo Oscuro */
+
+
+.dark-mode h2 {
+  color: #ffffff;
+}
+
+.dark-mode .navbar-vertical {
+  background-color: #2D2B2B;
+}
+
+.dark-mode .inicio {
+  background-color: #00AF00;
+  text-align: center;
+}
+
+.dark-mode .inicio:hover {
+  background-color: #ffffff;
+  text-align: center;
+  border-color: #00AF00;
+  color: #00AF00;
+  transition: 0.24s;
+  box-shadow: 0 1px 10px rgb(0, 245, 12);
+  text-decoration: none; /* Add this line */
+}
+
+.dark-mode .registro {
+  background-color: #00AF00;
+  text-align: center;
+  color: #ffffff;
+  border-color: #ff660000;
+  text-decoration: none; /* Add this line */
+}
+
+.dark-mode .registro:hover {
+  background-color: #ffffff;
+  text-align: center;
+  border: 0;
+  color: #00AF00;
+  transition: 0.24s;
+  box-shadow: 0 1px 10px rgb(0, 245, 12);
+  text-decoration: none; /* Add this line */
+}
+
+.dark-mode label {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.dark-mode a {
+  text-decoration: underline;
+  color: #ffffff;
+  text-align: right;
+}
+
+.dark-mode .parent {
+  background: linear-gradient(180deg, #030303 0%, #2A533B 100%);
+}
+
+.dark-mode input[type="text"], 
+.dark-mode input[type="password"] {
+  background-color: #333;
+  color: #ffffff;
+  outline: 1px solid #555;
+}
+
+.dark-mode input[type="text"]:focus, 
+.dark-mode input[type="password"]:focus {
+  outline: 1px solid #888;
+}
+
+.dark-mode input[type="text"]::before,
+.dark-mode input[type="password"]::before {
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+/* Placeholder en modo oscuro */
+.dark-mode ::placeholder {
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+
+/* Toggle de Modo Oscuro */
+#dark-mode-toggle {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+#text {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 60px;
+  height: 28px;
+  background: rgb(255, 255, 255);
+  display: block;
+  border-radius: 100px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+#text:after {
+  content: '';
+  position: absolute;
+  top: 1.3px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  background: rgb(9, 155, 9);
+  border-radius: 90px;
+  transition: 0.5s;
+}
+
+#dark-mode-toggle:checked + #text {
+  background: #ffffff;
+}
+
+#dark-mode-toggle:checked + #text:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+#text:active:after {
+  width: 50px;
+  background: #00AF00;
+}
+
+/* Estilos para Imágenes y Formulario */
+.icono {
+  text-align: center;
+  padding-top: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+a {
+  text-decoration: underline;
+  color: #5e5e5e;
+  text-align: right;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+.input-icon-correo {
+  width: 9.6%;
+  height: 5%;
+  margin-left: -6px;
+  vertical-align: middle;
+  opacity: 100%;
+}
+
+.input-icon-password {
+  width: 9.2%;
+  height: 5%;
+  margin-left: -6px;
+  vertical-align: middle;
+  opacity: 100%;
+}
+
+.btn.btn-success.form-control-sm {
+  width: 10%;
+  height: 40px;
+  margin-bottom: 5px;
+  padding: 4px;
+  border: 0;
+  background-color: #00af00;
+}
+
+
+/* Animación de desenfoque */
+@keyframes blur-in {
+  from {
+    filter: blur(50px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
+
+@keyframes blur-out {
+  from {
+    filter: blur(50px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
+
+/* Clase para aplicar la animación */
+.animate-blur {
+  animation: blur-in 0.3s forwards;
+}
+
+.animate-blur-out {
+  animation: blur-out 1s forwards;
+}
+
+
+
