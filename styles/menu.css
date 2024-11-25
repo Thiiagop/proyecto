@@ -150,51 +150,9 @@ header ul li a {
     padding: 2rem;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    top: 60%;
-    transform: translateY(-50%);
-}
-    
-
-.carousel-inner .carousel-item img {
-    max-width: 100%;
-    max-height: 100%;
-        object-fit: cover;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
 
 
-#carruselPrueba {
-    width: 100%;
-    max-width: 500px;
-    height: 500px;
-    margin: 50px auto;
-}
 
-.carousel-item.active img {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-.carousel-item img {
-    transform: scale(0.95);
-    opacity: 0.6;
-}
-
-.card {
-    width: 18rem;
-    margin-top: 50px;
-}
 
 @media (max-width: 700px) {
     header ul {
@@ -282,6 +240,73 @@ header ul li a {
     opacity: 0.7; /* Texto no seleccionado menos llamativo */
 }
 
+
+
+/* card  */
+
+.card {
+    flex: 1 1 20rem; /* Asegura un tamaño uniforme y flexible */
+    min-width: 22rem; /* Ancho mínimo */
+    max-width: 22rem; /* Ancho máximo */
+    min-height: 15rem; /* Altura mínima para todas las tarjetas */
+    max-height: auto; /* Deja que crezca según el contenido si es necesario */
+    flex-direction: row;
+    background-color: #696969;
+    border: 0;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.18);
+    margin: 3px;
+    overflow: hidden; /* Evita que el contenido desborde */
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Alineación horizontal */
+  }
+
+.card.dark {
+  color: #fff;
+}
+.card.card.bg-light-subtle .card-title {
+  color: dimgrey;
+}
+
+.card img {
+  max-width: 25%;
+  margin: auto;
+  padding: 0.5em;
+  border-radius: 0.7em;
+}
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.text-section {
+  max-width: 60%;
+}
+.cta-section {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.cta-section .btn {
+  padding: 0.3em 0.5em;
+  /* color: #696969; */
+}
+.card.bg-light-subtle .cta-section .btn {
+  background-color: #00AF00;
+  font-weight: 500;
+  border-color: #00AF00;
+}
+@media screen and (max-width: 475px) {
+  .card {
+    font-size: 0.9em;
+  }
+}
+
 /* header */
 
 .hover-contact {
@@ -311,7 +336,7 @@ header ul li a {
 
 /* footer */
 
-.container-footer {
+.container-footer  {
     max-width: 1170px;
     margin: auto;
 }
@@ -406,6 +431,7 @@ ul {
         width: 100%;
     }
 }
+
 /* filtro */
 .body {
     font-family: Poppins;
